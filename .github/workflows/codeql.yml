@@ -44,7 +44,7 @@ jobs:
           languages: ${{ matrix.language }}
       - name: Resolve LD_PRELOAD
         run: |
-          echo $LD_PRELOAD
+          #echo $LD_PRELOAD
           unset LD_PRELOAD
       - name: Build
         run: |
