@@ -44,7 +44,8 @@ jobs:
           languages: ${{ matrix.language }}
       - name: Resolve LD_PRELOAD
         run: |
-          chmod 755 /__t/CodeQL/2.21.3/x64/codeql/tools/linux64/${LIB}_${PLATFORM}_trace.so
+          chmod 755 /__t/CodeQL/2.21.3/x64/codeql/tools/linux64/lib_x86_64_trace.so
+          export LD_PRELOAD=/__t/CodeQL/2.21.3/x64/codeql/tools/linux64/lib_x86_64_trace.so
       - name: Build
         run: |
           ./configure
