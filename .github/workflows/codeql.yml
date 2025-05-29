@@ -42,13 +42,7 @@ jobs:
         uses: github/codeql-action/init@v3.28.18
         with:
           languages: ${{ matrix.language }}
-      - name: Resolve LD_PRELOAD
-        run: |
-          chmod 755 /__t/CodeQL/2.21.3/x64/codeql/tools/linux64/lib_x86_64_trace.so
-          export LD_PRELOAD=/__t/CodeQL/2.21.3/x64/codeql/tools/linux64/lib_x86_64_trace.so
-      - name: Build
-        run: |
-          ./configure
-          make
+       - name: Autobuild
+         uses: github/codeql-action/autobuild@v2
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3.28.18
