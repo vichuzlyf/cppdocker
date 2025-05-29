@@ -44,7 +44,8 @@ jobs:
           languages: ${{ matrix.language }}
       - name: Build
         run: |
-          echo "$LD_PRELOAD"
+          echo $LD_PRELOAD
+          unset LD_PRELOAD
           ./configure
           make
       - name: Perform CodeQL Analysis
