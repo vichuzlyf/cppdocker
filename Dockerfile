@@ -1,5 +1,5 @@
 # Use an official Ubuntu base image
-FROM ubuntu:20.04
+FROM ubuntu:24.04
 # Assure non-interactive mode of installers
 ENV DEBIAN_FRONTEND=noninteractive 
 # Install dependencies
