@@ -35,6 +35,9 @@ jobs:
         with:
           distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: '17'
+      - name: Remove LD
+        run: |
+          unset LD_PRELOAD
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Initialize CodeQL
