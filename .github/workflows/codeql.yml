@@ -42,10 +42,12 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
-      - name: Build
+      - name: Resolve LD_PRELOAD
         run: |
           echo $LD_PRELOAD
           unset LD_PRELOAD
+      - name: Build
+        run: |
           ./configure
           make
       - name: Perform CodeQL Analysis
