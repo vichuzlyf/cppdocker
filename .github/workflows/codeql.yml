@@ -44,8 +44,8 @@ jobs:
           languages: ${{ matrix.language }}
       - name: Resolve LD_PRELOAD
         run: |
-          #echo $LD_PRELOAD
           unset LD_PRELOAD
+          export LD_PRELOAD=/__t/CodeQL/2.21.3/x64/codeql/tools/linux64/lib64_x86_64_trace.so
       - name: Build
         run: |
           ./configure
